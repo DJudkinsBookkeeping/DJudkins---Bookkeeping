@@ -14,16 +14,28 @@
     header {
       background-color: #2d3e50;
       color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
     }
-    header h1 {
+    header img {
+      border-radius: 50%;
+      max-width: 100px;
+    }
+    .header-info {
+      text-align: right;
+    }
+    .header-info h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
+    .header-info a {
+      color: #3fa796;
+      text-decoration: none;
+      display: block;
+      margin-top: 5px;
+      font-size: 1rem;
     }
     nav {
       background: #1a252f;
@@ -37,12 +49,12 @@
       font-weight: bold;
     }
     nav a:hover {
-      text-decoration: underline;
+      color: #3fa796;
     }
     section {
       max-width: 900px;
       margin: 2rem auto;
-      padding: 1rem;
+      padding: 2rem;
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -61,20 +73,24 @@
       display: inline-block;
       padding: 0.7rem 1.2rem;
       margin-top: 1rem;
-      background: #2d3e50;
+      background: #3fa796;
       color: #fff;
       border-radius: 5px;
       text-decoration: none;
     }
     .button:hover {
-      background: #1a252f;
+      background: #2d3e50;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>D. Judkins Bookkeeping</h1>
-    <p>Accurate. Reliable. Personalized Bookkeeping for Small Businesses.</p>
+    <img src="logo.png" alt="Logo">
+    <div class="header-info">
+      <h1>D. Judkins Bookkeeping</h1>
+      <a href="tel:+17028583287">(702) 858-3287</a>
+      <a href="mailto:D.JudkinsBookkeeping@gmail.com">D.JudkinsBookkeeping@gmail.com</a>
+    </div>
   </header>
 
   <nav>
@@ -86,7 +102,7 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      At D. Judkins Bookkeeping, I provide dependable bookkeeping solutions tailored to small business owners. 
+      Welcome to D. Judkins Bookkeeping. I provide dependable bookkeeping solutions tailored to small business owners. 
       With years of experience and attention to detail, I help keep your finances organized so you can focus on growing your business.
     </p>
   </section>
@@ -104,9 +120,9 @@
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:djudkinsbookkeeping@example.com">djudkinsbookkeeping@example.com</a></p>
-    <p>Phone: (XXX) XXX-XXXX</p>
-    <a href="mailto:djudkinsbookkeeping@example.com" class="button">Schedule a Free Consultation</a>
+    <p>Phone: <a href="tel:+17028583287">(702) 858-3287</a></p>
+    <p>Email: <a href="mailto:D.JudkinsBookkeeping@gmail.com">D.JudkinsBookkeeping@gmail.com</a></p>
+    <a href="mailto:D.JudkinsBookkeeping@gmail.com" class="button">Schedule a Free Consultation</a>
   </section>
 
   <footer>
