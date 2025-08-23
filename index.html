@@ -8,97 +8,80 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f9f9f9;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f4f7fb;
       color: #333;
     }
     header {
-      background-color: #2d3e50;
-      color: #fff;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-    }
-    header img {
-      border-radius: 50%;
-      max-width: 100px;
-    }
-    .header-info {
-      text-align: right;
-    }
-    .header-info h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    .header-info a {
-      color: #3fa796;
-      text-decoration: none;
-      display: block;
-      margin-top: 5px;
-      font-size: 1rem;
-    }
-    nav {
-      background: #1a252f;
-      padding: 0.5rem;
-      text-align: center;
-    }
-    nav a {
+      background: #004080;
       color: #fff;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
+      padding: 1rem;
     }
-    nav a:hover {
-      color: #3fa796;
+    header img.logo {
+      border-radius: 50%;
+      margin-right: 15px;
+      width: 150px;
+      height: 150px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    header a {
+      color: #ffdd57;
+      text-decoration: none;
     }
     section {
-      max-width: 900px;
-      margin: 2rem auto;
       padding: 2rem;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: auto;
     }
     h2 {
-      color: #2d3e50;
+      color: #004080;
     }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #2d3e50;
-      color: #fff;
-      margin-top: 2rem;
+    ul {
+      list-style-type: square;
+      margin-left: 20px;
     }
     .button {
       display: inline-block;
-      padding: 0.7rem 1.2rem;
-      margin-top: 1rem;
-      background: #3fa796;
-      color: #fff;
-      border-radius: 5px;
+      background: #004080;
+      color: white;
+      padding: 10px 20px;
       text-decoration: none;
+      border-radius: 5px;
+      margin-top: 1rem;
     }
     .button:hover {
-      background: #2d3e50;
+      background: #00264d;
+    }
+    footer {
+      text-align: center;
+      background: #333;
+      color: white;
+      padding: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
+
+  <!-- ================= HEADER ================= -->
   <header>
-    <img src="logo.png" alt="Logo">
-    <div class="header-info">
+    <img src="logo.png" alt="D. Judkins Bookkeeping Logo" class="logo">
+    <div class="contact-info">
       <h1>D. Judkins Bookkeeping</h1>
-      <a href="tel:+17028583287">(702) 858-3287</a>
-      <a href="mailto:D.JudkinsBookkeeping@gmail.com">D.JudkinsBookkeeping@gmail.com</a>
+      <p>
+        📞 <a href="tel:+17028583287">(702) 858-3287</a> |
+        📧 <a href="mailto:D.JudkinsBookkeeping@gmail.com">D.JudkinsBookkeeping@gmail.com</a>
+      </p>
     </div>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
+  <!-- ================= ABOUT SECTION ================= -->
   <section id="about">
     <h2>About Me</h2>
     <p>
@@ -107,6 +90,7 @@
     </p>
   </section>
 
+  <!-- ================= SERVICES SECTION ================= -->
   <section id="services">
     <h2>Services</h2>
     <ul>
@@ -118,6 +102,7 @@
     </ul>
   </section>
 
+  <!-- ================= CONTACT SECTION ================= -->
   <section id="contact">
     <h2>Contact</h2>
     <p>Phone: <a href="tel:+17028583287">(702) 858-3287</a></p>
@@ -125,8 +110,10 @@
     <a href="mailto:D.JudkinsBookkeeping@gmail.com" class="button">Schedule a Free Consultation</a>
   </section>
 
+  <!-- ================= FOOTER ================= -->
   <footer>
     <p>&copy; 2025 D. Judkins Bookkeeping. All Rights Reserved.</p>
   </footer>
+
 </body>
 </html>
