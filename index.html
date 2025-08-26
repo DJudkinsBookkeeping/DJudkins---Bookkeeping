@@ -20,15 +20,10 @@
       padding: 1rem 2rem;
     }
     header img {
-      border-radius: 50%;
-      max-width: 100px;
+      max-width: 120px;
     }
     .header-info {
       text-align: right;
-    }
-    .header-info h1 {
-      margin: 0;
-      font-size: 2rem;
     }
     .header-info a {
       color: #3fa796;
@@ -120,7 +115,6 @@
   <header>
     <img src="logo.png" alt="Logo">
     <div class="header-info">
-      <h1>D. Judkins Bookkeeping</h1>
       <a href="tel:+19283630783">(928) 363-0783</a>
       <a href="mailto:D.JudkinsBookkeeping@gmail.com">D.JudkinsBookkeeping@gmail.com</a>
       <a href="https://www.linkedin.com/in/deanna-judkins-a82510277/" target="_blank">LinkedIn</a>
@@ -140,7 +134,11 @@
       Welcome to D. Judkins Bookkeeping. I provide professional bookkeeping services to assist business owners increase profit by providing detailed and accurate data to advance your business. Whether you are just starting out or  
       have a few months or years of cleanup to get your business on track, we can make that happen. I help keep your finances organized so you can focus on growing your business. 
     </p>
-    <img src="intuit-bookkeeping-certification.png" alt="Intuit Certified Bookkeeper" style="max-width:200px; margin-top:1rem;">
+
+    <div style="display:flex; gap:2rem; margin-top:1rem; align-items:flex-start; flex-wrap:wrap;">
+      <img src="your-photo.jpg" alt="Deanna Judkins" style="max-width:200px;">
+      <img src="intuit-bookkeeping-certification.png" alt="Intuit Certified Bookkeeper" style="max-width:200px;">
+    </div>
   </section>
 
   <section id="services">
@@ -181,9 +179,9 @@
 
   <script>
     // Editable pricing variables
-     const BASE_FEE = 150;        // Flat monthly fee
-    const PER_TRANSACTION = 1.5;   // Price per transaction
-    const PER_ACCOUNT = 100;      // Price per account
+    const BASE_FEE = 150;        // Flat monthly fee
+    const PER_TRANSACTION = 1.5; // Price per transaction
+    const PER_ACCOUNT = 100;     // Price per account
 
     function calculateCost() {
       const transactions = parseInt(document.getElementById('transactions').value) || 0;
