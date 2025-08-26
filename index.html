@@ -141,9 +141,9 @@
 
     <script>
       function calculateEstimate() {
-        const baseFee = 100; // placeholder
-        const perTransaction = 1; // placeholder
-        const perAccount = 50; // placeholder
+        const baseFee = 175; // Flat monthly fee
+        const perTransaction = 1.5; // price per transaction
+        const perAccount = 125; // price per account
 
         const transactions = parseInt(document.getElementById('transactions').value) || 0;
         const accounts = parseInt(document.getElementById('accounts').value) || 1;
