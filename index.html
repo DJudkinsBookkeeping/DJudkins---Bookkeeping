@@ -81,38 +81,6 @@
     .button:hover {
       background: #2d3e50;
     }
-
-    /* 🔹 Certification Badge Styling */
-    .badge {
-      display: inline-block;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      position: relative;
-    }
-    .badge:hover {
-      transform: scale(1.05);
-    }
-    .badge:hover::after {
-      content: "Verified by Intuit";
-      position: absolute;
-      bottom: -25px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #2d3e50;
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 0.8rem;
-      white-space: nowrap;
-    }
-
-    /* 🔹 LinkedIn Icon Hover */
-    .linkedin-icon svg {
-      transition: fill 0.3s ease;
-    }
-    .linkedin-icon:hover svg {
-      fill: #0077b5;
-    }
   </style>
 </head>
 <body>
@@ -122,45 +90,24 @@
       <h1>D. Judkins Bookkeeping</h1>
       <a href="tel:+19283630783">(928) 363-0783</a>
       <a href="mailto:D.JudkinsBookkeeping@gmail.com">D.JudkinsBookkeeping@gmail.com</a>
-      <!-- LinkedIn Icon in Header -->
-      <a href="https://www.linkedin.com/in/deanna-judkins-a82510277" target="_blank" class="linkedin-icon" style="display:inline-block; margin-top:8px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#3fa796" viewBox="0 0 24 24">
-          <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 
-          2.24 5 5 5h14c2.76 0 5-2.24 
-          5-5v-14c0-2.76-2.24-5-5-5zm-11 
-          19h-3v-10h3v10zm-1.5-11.27c-.97 
-          0-1.75-.79-1.75-1.76s.78-1.75 
-          1.75-1.75 1.75.78 
-          1.75 1.75-.78 1.76-1.75 
-          1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 
-          0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 
-          1.38-1.54 2.84-1.54 3.04 0 3.6 
-          2 3.6 4.6v5.6z"/>
-        </svg>
-      </a>
+      <a href="https://www.linkedin.com/in/deanna-judkins-a82510277" target="_blank">LinkedIn</a>
     </div>
   </header>
 
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section id="about">
     <h2>About Me</h2>
     <p>
-      Welcome to D. Judkins Bookkeeping. I provide professional bookkeeping services to assist business owners increase profit by providing detailed and accurate data to advance your business.  
-      Whether you are just starting out or have a few months or years of cleanup to get your business on track, we can make that happen. I help keep your finances organized so you can focus on growing your business. 
+      Welcome to D. Judkins Bookkeeping. I provide professional bookkeeping services to assist business owners increase profit by providing detailed and accurate data to advance your business.  Whether you are just starting out or  
+      have a few months or years of cleanup to get your business on track, we can make that happen. I help keep your finances organized so you can focus on growing your business. 
     </p>
-
-    <!-- Certification Badge in About Section -->
-    <div style="margin-top: 20px; text-align: center;">
-      <a href="https://www.linkedin.com/in/deanna-judkins-a82510277" target="_blank" class="badge">
-        <img src="intuit-bookkeeping-certification.png" alt="Intuit Trained Bookkeeper Certification" style="max-width:200px; height:auto;">
-      </a>
-      <p><strong>Intuit Trained Bookkeeper</strong></p>
-    </div>
+    <img src="intuit-bookkeeping-certification.png" alt="Intuit Bookkeeping Certification" style="max-width:200px; display:block; margin-top:1rem;">
   </section>
 
   <section id="services">
@@ -174,6 +121,48 @@
     </ul>
   </section>
 
+  <section id="pricing">
+    <h2>Estimate Your Bookkeeping Package</h2>
+    <p>Use the calculator below to estimate your monthly bookkeeping package. (Placeholder rates: $100 base + $1/transaction + $50/account)</p>
+
+    <div style="background:#f4f4f4;padding:1rem;border-radius:8px;max-width:500px;margin:auto;">
+      <label for="transactions">Number of Transactions:</label>
+      <input type="number" id="transactions" value="0" min="0" style="width:80px; margin: 0 0 1rem 10px;"><br>
+
+      <label for="accounts">Number of Accounts:</label>
+      <input type="number" id="accounts" value="1" min="1" style="width:80px; margin: 0 0 1rem 10px;"><br>
+      
+      <button onclick="calculateEstimate()" style="padding:0.5rem 1rem;background:#3fa796;color:#fff;border:none;border-radius:5px;cursor:pointer;">
+        Calculate
+      </button>
+
+      <div id="estimateResult" style="margin-top:1rem;font-weight:bold;color:#2d3e50;"></div>
+    </div>
+
+    <script>
+      function calculateEstimate() {
+        const baseFee = 100; // placeholder
+        const perTransaction = 1; // placeholder
+        const perAccount = 50; // placeholder
+
+        const transactions = parseInt(document.getElementById('transactions').value) || 0;
+        const accounts = parseInt(document.getElementById('accounts').value) || 1;
+
+        const transactionCost = transactions * perTransaction;
+        const accountCost = accounts * perAccount;
+        const total = baseFee + transactionCost + accountCost;
+
+        document.getElementById('estimateResult').innerHTML = `
+          Base Fee: $${baseFee}<br>
+          Transactions (${transactions} × $${perTransaction}): $${transactionCost}<br>
+          Accounts (${accounts} × $${perAccount}): $${accountCost}<br>
+          <hr>
+          Total Monthly Estimate: <strong>$${total}</strong>
+        `;
+      }
+    </script>
+  </section>
+
   <section id="contact">
     <h2>Contact</h2>
     <p>Phone: <a href="tel:+19283630783">(928) 363-0783</a></p>
@@ -183,30 +172,6 @@
 
   <footer>
     <p>&copy; 2025 D. Judkins Bookkeeping. All Rights Reserved.</p>
-
-    <!-- LinkedIn Icon in Footer -->
-    <a href="https://www.linkedin.com/in/deanna-judkins-a82510277" target="_blank" class="linkedin-icon" style="display:inline-block; margin-top:10px;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#3fa796" viewBox="0 0 24 24">
-        <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 
-        2.76 2.24 5 5 5h14c2.76 0 5-2.24 
-        5-5v-14c0-2.76-2.24-5-5-5zm-11 
-        19h-3v-10h3v10zm-1.5-11.27c-.97 
-        0-1.75-.79-1.75-1.76s.78-1.75 
-        1.75-1.75 1.75.78 
-        1.75 1.75-.78 1.76-1.75 
-        1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 
-        0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 
-        1.38-1.54 2.84-1.54 3.04 0 3.6 
-        2 3.6 4.6v5.6z"/>
-      </svg>
-    </a>
-
-    <!-- Small Badge in Footer -->
-    <div style="margin-top: 10px;">
-      <a href="https://www.linkedin.com/in/deanna-judkins-a82510277" target="_blank" class="badge">
-        <img src="intuit-bookkeeping-certification.png" alt="Intuit Trained Bookkeeper Certification" style="max-width:100px; height:auto;">
-      </a>
-    </div>
   </footer>
 </body>
 </html>
