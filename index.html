@@ -81,6 +81,39 @@
     .button:hover {
       background: #2d3e50;
     }
+    .calculator {
+      margin-top: 2rem;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f4f4f4;
+    }
+    .calculator label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    .calculator input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .calculator button {
+      margin-top: 1rem;
+      padding: 0.7rem 1.2rem;
+      background: #3fa796;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .calculator button:hover {
+      background: #2d3e50;
+    }
+    .calculator p {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -90,24 +123,24 @@
       <h1>D. Judkins Bookkeeping</h1>
       <a href="tel:+19283630783">(928) 363-0783</a>
       <a href="mailto:D.JudkinsBookkeeping@gmail.com">D.JudkinsBookkeeping@gmail.com</a>
-      <a href="https://www.linkedin.com/in/deanna-judkins-a82510277" target="_blank">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/deanna-judkins-a82510277/" target="_blank">LinkedIn</a>
     </div>
   </header>
 
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
-    <a href="#pricing">Pricing</a>
+    <a href="#calculator">Estimate</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section id="about">
     <h2>About Me</h2>
     <p>
-      Welcome to D. Judkins Bookkeeping. I provide professional bookkeeping services to assist business owners increase profit by providing detailed and accurate data to advance your business.  Whether you are just starting out or  
+      Welcome to D. Judkins Bookkeeping. I provide professional bookkeeping services to assist business owners increase profit by providing detailed and accurate data to advance your business. Whether you are just starting out or  
       have a few months or years of cleanup to get your business on track, we can make that happen. I help keep your finances organized so you can focus on growing your business. 
     </p>
-    <img src="intuit-bookkeeping-certification.png" alt="Intuit Bookkeeping Certification" style="max-width:200px; display:block; margin-top:1rem;">
+    <img src="intuit-bookkeeping-certification.png" alt="Intuit Certified Bookkeeper" style="max-width:200px; margin-top:1rem;">
   </section>
 
   <section id="services">
@@ -121,46 +154,18 @@
     </ul>
   </section>
 
-  <section id="pricing">
-    <h2>Estimate Your Bookkeeping Package</h2>
-    <p>Use the calculator below to estimate your monthly bookkeeping package. (Placeholder rates: $100 base + $1/transaction + $50/account)</p>
+  <section id="calculator">
+    <h2>Estimate Your Monthly Cost</h2>
+    <div class="calculator">
+      <label for="transactions">Number of Transactions per Month</label>
+      <input type="number" id="transactions" placeholder="Enter number of transactions">
 
-    <div style="background:#f4f4f4;padding:1rem;border-radius:8px;max-width:500px;margin:auto;">
-      <label for="transactions">Number of Transactions:</label>
-      <input type="number" id="transactions" value="0" min="0" style="width:80px; margin: 0 0 1rem 10px;"><br>
+      <label for="accounts">Number of Accounts</label>
+      <input type="number" id="accounts" placeholder="Enter number of accounts">
 
-      <label for="accounts">Number of Accounts:</label>
-      <input type="number" id="accounts" value="1" min="1" style="width:80px; margin: 0 0 1rem 10px;"><br>
-      
-      <button onclick="calculateEstimate()" style="padding:0.5rem 1rem;background:#3fa796;color:#fff;border:none;border-radius:5px;cursor:pointer;">
-        Calculate
-      </button>
-
-      <div id="estimateResult" style="margin-top:1rem;font-weight:bold;color:#2d3e50;"></div>
+      <button onclick="calculateCost()">Calculate</button>
+      <p id="result"></p>
     </div>
-
-    <script>
-      function calculateEstimate() {
-        const baseFee = 175; // Flat monthly fee
-        const perTransaction = 1.5; // price per transaction
-        const perAccount = 125; // price per account
-
-        const transactions = parseInt(document.getElementById('transactions').value) || 0;
-        const accounts = parseInt(document.getElementById('accounts').value) || 1;
-
-        const transactionCost = transactions * perTransaction;
-        const accountCost = accounts * perAccount;
-        const total = baseFee + transactionCost + accountCost;
-
-        document.getElementById('estimateResult').innerHTML = `
-          Base Fee: $${baseFee}<br>
-          Transactions (${transactions} × $${perTransaction}): $${transactionCost}<br>
-          Accounts (${accounts} × $${perAccount}): $${accountCost}<br>
-          <hr>
-          Total Monthly Estimate: <strong>$${total}</strong>
-        `;
-      }
-    </script>
   </section>
 
   <section id="contact">
@@ -173,5 +178,19 @@
   <footer>
     <p>&copy; 2025 D. Judkins Bookkeeping. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    // Editable pricing variables
+    const BASE_FEE = 100;        // Flat monthly fee
+    const PER_TRANSACTION = 1;   // Price per transaction
+    const PER_ACCOUNT = 50;      // Price per account
+
+    function calculateCost() {
+      const transactions = parseInt(document.getElementById('transactions').value) || 0;
+      const accounts = parseInt(document.getElementById('accounts').value) || 0;
+      const cost = BASE_FEE + (transactions * PER_TRANSACTION) + (accounts * PER_ACCOUNT);
+      document.getElementById('result').innerText = `Estimated Monthly Cost: $${cost}`;
+    }
+  </script>
 </body>
 </html>
